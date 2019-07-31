@@ -6,9 +6,9 @@
     },
     "authors": [
         {
-            "name": "Xavier Subirà",
-            "email": "xavier.subira.yahoo@gmail.com"
-        }
+            "name": "Kyomi Guidet",
+            "email": "kyomiguidet@gmail.com"
+        },
     ],   
     "autoload": {
         "psr-4": {
