@@ -1,5 +1,5 @@
 {
-    "name": "temple/Aplicaciones_web",
+    "name": "temple/aplicaciones_web",
     "description": "Backend for learning purposes",
     "require": {
         "php":">=7.0"
