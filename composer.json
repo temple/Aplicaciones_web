@@ -8,6 +8,10 @@
         {
             "name": "Xavier Subirà",
             "email": "xavier.subira.yahoo@gmail.com"
+        },
+        {
+            "name": "Jordi Gonzalez",
+            "email": "gonzalezsanchezjordi@gmail.com"
         }
     ],   
     "autoload": {
