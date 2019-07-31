@@ -12,6 +12,18 @@
         {
             "name": "Kyomi Guidet",
             "email": "kyomiguidet@gmail.com"
+        },
+        {
+            "name": "Jordi Gonzalez",
+            "email": "gonzalezsanchezjordi@gmail.com"
+        },
+        {      
+            "name": "alex joan ita",
+            "email": "itain.sys@gmail.com"
+        },
+        {
+            "name": "Leyre Sánchez",
+            "email": "lesanfu94@gmail.com"
         }
     ],   
     "autoload": {
