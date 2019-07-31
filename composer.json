@@ -12,6 +12,26 @@
         {
             "name": "walaa alkhalifa",
             "email": "w.anwar.khalifa@gmail.com"
+        },
+        {
+            "name": "Kyomi Guidet",
+            "email": "kyomiguidet@gmail.com"
+        },
+        {
+            "name": "Jordi Gonzalez",
+            "email": "gonzalezsanchezjordi@gmail.com"
+        },
+        {      
+            "name": "alex joan ita",
+            "email": "itain.sys@gmail.com"
+        },
+        {
+            "name": "Leyre Sánchez",
+            "email": "lesanfu94@gmail.com"
+        },
+        {
+            "name": "Carmen Custodio",
+            "email": "chantra132@gmail.com"
         }
     ],   
     "autoload": {
