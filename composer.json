@@ -10,14 +10,6 @@
             "email": "xavier.subira.yahoo@gmail.com"
         },
         {
-            "name": "walaa alkhalifa",
-            "email": "w.anwar.khalifa@gmail.com"
-        },
-        {
-            "name": "Kyomi Guidet",
-            "email": "kyomiguidet@gmail.com"
-        },
-        {
             "name": "Jordi Gonzalez",
             "email": "gonzalezsanchezjordi@gmail.com"
         },
@@ -32,6 +24,10 @@
         {
             "name": "Carmen Custodio",
             "email": "chantra132@gmail.com"
+        },
+        {
+            "name": "Musa",
+            "email": "moossaaaa@gmail.com"
         }
     ],   
     "autoload": {
