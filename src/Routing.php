@@ -1,5 +1,5 @@
 <?php
-use src\HomeController;
+use controller;
 
 class Routing{
 
