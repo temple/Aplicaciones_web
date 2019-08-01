@@ -1,7 +1,7 @@
 <?php
 
-namespace src\view;
-use src\controller\HomeController;
+
+use controller\HomeController;
 
 class Routing{
 
