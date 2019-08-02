@@ -1,6 +1,6 @@
 <?php
 
-namespace controllers;
+namespace controller;
 
 use controller\IndexControllerInterface;
 use errors\PageNotFoundError;
@@ -13,6 +13,10 @@ abstract class AbstractController{
 	 */
 	 */
 	protected $errorController;	
+
+	public function __construct(){
+		$this->errorController = new ErrorController();
+	}
 
 	// TODO:
 	// es: hacer que en la construcción de una nueva instancia se inicialice la propiedad errorController
