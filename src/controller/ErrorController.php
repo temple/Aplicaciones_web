@@ -1,22 +1,27 @@
 <?php
 
-namespace ;
-//TODO:
+namespace controller;
+	use controller\IndexControllerInterface;
+	use errors\PageNotFoundError;
+	use controller\AbstractController;
+//DONE:
 // es: Determinar el namespace correcto
 // en: Determine the right namespace
 
-class ErrorController
-	//TODO: 
+class ErrorController extends AbstractController{
+	//DONE: 
 	// es: relacionar correctamente con AbstractController
     // en: relate in the right manner with AbstractController
 	implements IndexControllerInterface
-	//TODO:
+	//DONE:
 	// es: Importar IndexControllerInterface
 	// en: Import IndexControllerInterface
 {	
 
-	public function IndexAction(/* CHANGE ME*/);
-	//TODO:
+	public function IndexAction($request,$params);
+	//DONE:
+	$response = new BinaryFileResponse(__DIR__.'/../view/error.html');
+	$response->send();
 	// es: Implementa la función y haz que muestre una vista de error
 	// en: Implement function and make it show an error view
 
