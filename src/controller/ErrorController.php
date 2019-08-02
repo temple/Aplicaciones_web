@@ -18,10 +18,11 @@ class ErrorController extends AbstractController
 	
 {	
 
-	public function IndexAction($request,$params){
+	public function IndexAction($request,array $params)
+			{
 
-     $vista = file_get_contents("../view/error.html");
-     echo $vista;
+     			$vista = file_get_contents(__DIR__."../view/error.html");
+    			 echo $vista;
 
 	//DONE:
 	// es: Implementa la función y haz que muestre una vista de error
@@ -30,5 +31,5 @@ class ErrorController extends AbstractController
 	//TODO:
 	// es: Haz que la vista de error muestre el mensaje del error ocurrido
 	// en: Make the error view show the message of the error 
-
+			}
 }
