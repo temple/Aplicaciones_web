@@ -2,17 +2,17 @@
 
 namespace controller;
 
-use  controller/IndexControllerInterface;
-//TODO:
+use  controller\IndexControllerInterface;
+//DONE:
 // es: Determinar el namespace correcto
 // en: Determine the right namespace
 
 class ErrorController extends AbstractController
-	//TODO: 
+	//DONE: 
 	// es: relacionar correctamente con AbstractController
     // en: relate in the right manner with AbstractController
-	implements IndexControllerInterface;
-	//TODO:
+	implements IndexControllerInterface
+	//DONE:
 	// es: Importar IndexControllerInterface
 	// en: Import IndexControllerInterface
 	
@@ -20,9 +20,10 @@ class ErrorController extends AbstractController
 
 	public function IndexAction($request,$params){
 
+     $vista = file_get_contents("../view/error.html");
+     echo $vista;
 
-
-	//TODO:
+	//DONE:
 	// es: Implementa la función y haz que muestre una vista de error
 	// en: Implement function and make it show an error view
 
