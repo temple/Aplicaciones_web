@@ -5,13 +5,19 @@ use controller\HomeController;
 
 class Routing{
 
-	protected $controllers = array();
+	/**
+	 * Objeto de tipo Routes
+	 * @var \StdClass
+	 */
+	protected $routes;
 
 	public function __construct(){
-		$this->controllers['home'] = new HomeController();
-
-		//var_dump($this->controllers);
+		$this->buildRoutes();
 	}	
 
+
+	// TODO: Implementar el método buildRoutes
+	// la propiedad $routes tendrá que responder TRUE
+		// a la pregunta $this->routes instanceof \StdClass
 
 }
