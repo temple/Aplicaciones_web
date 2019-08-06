@@ -1,10 +1,8 @@
 <?php
 
-
 use controller\HomeController;
 
 class Routing{
-
 	/**
 	 * Objeto de tipo Routes
 	 * @var \StdClass
@@ -15,8 +13,14 @@ class Routing{
 		$this->buildRoutes();
 	}	
 
+	public function buildRoutes(){
+		$this->routes = $GLOBALS['config']['routes'];
+		print($this->routes instanceof \StdClass);
+		
 
-	// TODO: Implementar el método buildRoutes
+	}
+
+	// DONE: Implementar el método buildRoutes
 	// la propiedad $routes tendrá que responder TRUE
 		// a la pregunta $this->routes instanceof \StdClass
 
