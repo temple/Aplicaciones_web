@@ -22,8 +22,6 @@ class Routing{
 			$this->routes = $GLOBALS['config']['routes'];
 			
 		}
-		var_dump($this->routes);
-
 	}
 
 	// DONE: Implementar el método buildRoutes
