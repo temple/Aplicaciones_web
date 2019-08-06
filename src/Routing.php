@@ -14,9 +14,15 @@ class Routing{
 	}	
 
 	public function buildRoutes(){
-		$this->routes = $GLOBALS['config']['routes'];
-		print($this->routes instanceof \StdClass);
-		
+
+		$contents = file_get_contents(__DIR__.'/config/routes.json');
+		$this->routes =json_decode($contents);
+
+		if (!($this->routes instanceof \StdClass)) {
+			$this->routes = $GLOBALS['config']['routes'];
+			
+		}
+		var_dump($this->routes);
 
 	}
 
