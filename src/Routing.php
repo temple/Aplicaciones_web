@@ -16,8 +16,13 @@ class Routing{
 		$this->buildRoutes();
 	}	
 	public function buildRoutes(){
-		$routes = $GLOBALS['config'] ['routes'];
-		var_dump($routes instanceof \StdClass);
+
+		$content = file_get_contents(__DIR__."/config/routes.json");
+		$this->routes = json_decode($content); 
+		// Guardamos en content el contenido (string) del archivo de rutas
+		$this->routes = $this->routes instanceof \StdClass
+						? $this->routes 
+						: $GLOBALS['config'] ['routes']; 
 	}
 	
 	// DONE: Implementar el método buildRoutes
