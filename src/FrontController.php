@@ -18,7 +18,6 @@ class FrontController
 	// crea esta función. No olvides mirar el código de public/index.php 
  	public function run()
  		{
-
  		$this->request_uri = $_SERVER['REQUEST_URI'];
  		}
 
