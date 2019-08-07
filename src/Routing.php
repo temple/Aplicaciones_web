@@ -22,9 +22,9 @@ class Routing{
 
 
 	public function buildRoutes(){
-	//contenido JSON
+		
 		$content = file_get_contents(__DIR__."/config/routes.json");
-				//Array con el contenido de json
+		//contenido JSON
 		$this->routes = json_decode($content); 
 
 		$this->routes = $this->routes instanceof \StdClass

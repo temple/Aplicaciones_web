@@ -34,7 +34,6 @@ $paths =<<<PATHS
 PATHS;
 
 $paths = json_decode($paths);
-
 $GLOBALS['config']= array(
 	"routes" => $paths;
 );
