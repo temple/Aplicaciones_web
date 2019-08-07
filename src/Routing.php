@@ -10,8 +10,7 @@ class Routing{
 	public function __construct(){
 		$this->controllers['home'] = new HomeController();
 
-		//var_dump($this->controllers);
-	}	
+		}	
 
 
 }
