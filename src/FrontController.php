@@ -4,9 +4,16 @@
 class FrontController
 {
 	protected $routing;
+	protected $request_uri;
 
 	public function __construct(){
 		$this->routing = new Routing();
+	}
+
+	public function run(){
+		$ruta = $_SERVER['REQUEST_URI'];
+ 		$this->request_uri	= $ruta;
+ 		var_dump($this->$ruta);
 	}
 
 	//TODO: Que obtenga información del servidor en la que haya la ruta solicitada por el usuario en la request
