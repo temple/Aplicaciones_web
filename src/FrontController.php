@@ -21,7 +21,7 @@ class FrontController
 public function run(){
 		
 		$this->ruta = $_SERVER['REQUEST_URI'];
-		var_dump($this->ruta);
+
 	}
 
 
@@ -30,6 +30,6 @@ public function run(){
 	public function run(){
 		
 		$this->ruta = $_SERVER['REQUEST_URI'];
-		var_dump($this->ruta);
+
 	}
 }
