@@ -4,6 +4,7 @@
 class FrontController
 {
 	protected $routing;
+	protected $ruta;
 
 	public function __construct(){
 		$this->routing = new Routing();
@@ -16,4 +17,8 @@ class FrontController
 	// en una función.
 	// crea esta función. No olvides mirar el código de public/index.php 
 
+
+	public function run(){
+		$this->ruta = $_SERVER['REQUEST_URI'];
+	}
 }
