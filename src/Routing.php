@@ -29,7 +29,8 @@ class Routing
 	// DONE: Implementar el método buildRoutes
 	// la propiedad $routes tendrá que responder TRUE
 	// a la pregunta $this->routes instanceof \StdClass
-
+	public function getController(string $uri) : IdxController;
+	public function getAction(string $uri) : string;
 	// TODO: Implementar las funciones necesarias 
 	// para que Routing cumpla con la interfaz RoutingInterface 
 }
