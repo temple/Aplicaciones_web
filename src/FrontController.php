@@ -18,6 +18,14 @@ class FrontController
 	//TODO: Esto lo tiene que hacer FrontController
 	// en una función.
 	// crea esta función. No olvides mirar el código de public/index.php 
+public function run(){
+		
+		$this->ruta = $_SERVER['REQUEST_URI'];
+		var_dump($this->ruta);
+	}
+
+
+
 
 	public function run(){
 		
