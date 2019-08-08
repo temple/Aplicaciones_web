@@ -2,6 +2,8 @@
 
 namespace controller;
 
-class HomeController{
+class HomeController
+	extends AbstractController
+{
 	
 }

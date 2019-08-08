@@ -1,6 +1,6 @@
 <?php
 
-namespace controllers;
+namespace controller;
 
 use controller\IndexControllerInterface;
 use errors\PageNotFoundError;
@@ -11,7 +11,7 @@ abstract class AbstractController{
 	 * Controller what shows an error page
 	 * @var IndexControllerInterface
 	 */
-	 */
+
 	protected $errorController;	
 
 	// TODO:
@@ -58,14 +58,17 @@ abstract class AbstractController{
 	/**
 	 * Muestra un error
 	 */
-	protected function showError($request, \Throwable $error, string $action, array $params, \Throwable $error = null)
+	protected function showError($request, \Throwable $error =null, string $action ='index', array $params=[])
 	{
 		if ($this->errorController instanceof IndexControllerInterface){
-			$params = new Array('action'=>$action,'error'=>$error, 'params'=>$params);
+			$params = array('action'=>$action,'error'=>$error, 'params'=>$params);
 			$this->errorController->indexAction($request,$params);
 			//$this->errorController->callAction($request,'index',$params);
 		}
 		else{
+			if (!($error instanceof \Throwable))
+				$error = new \Exception('Uknown Exception',500);
+			
 			throw $error;
 		}
 	}

@@ -23,11 +23,11 @@ $paths =<<<PATHS
 	},
 
 	"404" : {
-		"controller": "errorController"
+		"controller": "ErrorController"
 	},
 
 	"error": {
-		"controller": "errorController",
+		"controller": "ErrorController",
 		"action": "indexAction"
 	}
 }
