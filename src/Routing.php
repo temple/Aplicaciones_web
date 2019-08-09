@@ -3,11 +3,12 @@
 
 use controller\HomeController;
 
-class Routing{
+include "config.php";
 
+class Routing{
 	/**
 	 * Objeto de tipo Routes
-	 * var \StdClass
+	 * @var \StdClass
 	 */
 	protected $routes;
 
@@ -16,14 +17,19 @@ class Routing{
 	}	
 
 	public function buildRoutes(){
-		$content = file_get_contents(__DIR__."/config.php");
-		$this->routes = new \StdClass;
-		var_dump($this->routes instanceof \StdClass);
+		$routes = $GLOBALS['config'] ['routes'];
+		
+		$content = file_get_contents(__DIR__."/config/routes.json");
+
+		$this->routes = json_decode($content); 
+		
+		$this->routes = $this->routes instanceof \StdClass
+		? $this->routes 
+		: $GLOBALS['config'] ['routes']; 
 	}
 
 	// TODO: Implementar el método buildRoutes
 	// la propiedad $routes tendrá que responder TRUE
 		// a la pregunta $this->routes instanceof \StdClass
 	//Logra que en la propiedad $routes de Routing se carguen las rutas de config.php o alternativamente de routes.json
-
 }
