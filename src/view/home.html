@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ajax Form</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/index.css">
+		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+	</head>
+	<body>
+		<form method="post" id="ajaxform">
+			<h3>Ajax form</h3>
+			<input type="text" id="nombre" name="nombre" placeholder="Nombre">
+			<input type="email" id="email" name="email" placeholder="Email">
+			<input type="password" id="pass" name="pass" placeholder="Contraseña">
+			<input type="button" id="btn" value="Enviar Form">
+			<div id="data"></div>
+		</form>
+			<?php
+
+				var_dump($this->request_uri);
+				var_dump($this->params);
+
+			?>
+
+	</body>
+</html>
