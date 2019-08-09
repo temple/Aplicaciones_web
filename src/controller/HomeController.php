@@ -4,7 +4,16 @@ namespace controller;
 
 class HomeController
 	extends AbstractController
-{
+
+	{
+
+
+	function indexAction($this->request_uri,$this->params){
+
+		$vista = file_get_contents(__DIR__."../view/home.html");
+		echo $vista;
+
+	}
 
 	function index ($this->request_uri,$this->params){
  		$vista = file_get_contents(__DIR__."../view/home.html");
