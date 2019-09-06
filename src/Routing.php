@@ -1,8 +1,7 @@
 <?php
 
-
 use controller\HomeController;
-include config.php
+include "config.php";
 class Routing{
 
 	/**
