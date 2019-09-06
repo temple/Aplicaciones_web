@@ -12,8 +12,7 @@ class FrontController
 
 	public function run(){
 		$this->request_uri = $_SERVER["REQUEST_URI"];
-		//Muestro la información de la ruta solicitada.
-		var_dump($this);
+
 
 	}
 
