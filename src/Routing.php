@@ -23,7 +23,13 @@ class Routing{
 		// Convierte un string codificado en JSON a una variable de PHP.
 
 		$this->routes = $this->routes instanceof \StdClass
-		
+		// en vez de utilizar if- else utilizo operadores ternarios
+		// : ?
+		? $this->routes
+		//si  da como respuesta TRUE no hay cambios
+		: $GLOBALS['config'] ['routes']
+		//si es lo contrario se diriga a routes para buscar el indice de rutas del array
+
 
 	}	
 
