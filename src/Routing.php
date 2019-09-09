@@ -27,7 +27,7 @@ class Routing{
 		// : ?
 		? $this->routes
 		//si  da como respuesta TRUE no hay cambios
-		: $GLOBALS['config'] ['routes']
+		: $GLOBALS['config'] ['routes'];
 		//si es lo contrario se diriga a routes para buscar el indice de rutas del array
 
 
