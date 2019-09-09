@@ -2,14 +2,18 @@
 
 
 use controller\HomeController;
+use controller\AbstractController as IdxController;
 
 include "config.php";
+
+class Routing
+
+	implements RoutingInterface
 
 	/**
 	 * Objeto de tipo Routes
 	 * @var \StdClass
 	 */
-	protected $routes;
 
 	public function __construct(){
 		$this->buildRoutes();
