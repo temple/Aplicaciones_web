@@ -1,6 +1,9 @@
 <?php
 
+<<<<<<< HEAD
 include "config.php";
+=======
+>>>>>>> kyomi_RoutingInterface
 class FrontController
 {
 	/**
@@ -22,6 +25,7 @@ class FrontController
 	 */
 	public $params;
 
+<<<<<<< HEAD
 	/**
 	 * Constructor
 	 * Crea el componente de Routing que permitirá averiguar
@@ -55,5 +59,21 @@ class FrontController
 
 
 	}
+=======
+	protected $request_uri;
+	
+	public function __construct(){
+		$this->routing = new Routing();
+	}
+	// en una función.
+	// crea esta función. No olvides mirar el código de public/index.php 
+>>>>>>> kyomi_RoutingInterface
+
+	public function run(){
+
+	  $this->request_uri = $_SERVER["REQUEST_URI"];
+
+
+    }
 
 }
