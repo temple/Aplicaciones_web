@@ -11,8 +11,7 @@ abstract class AbstractController{
 	 * Controller what shows an error page
 	 * @var IndexControllerInterface
 	 */
-	//protected $indexAction;
-	//protected $premiumAction;
+	
 	protected $errorController;	
 
 
@@ -39,15 +38,17 @@ abstract class AbstractController{
 		//  Si la acción solicitada no termina en "Action"..
 		if (FALSE == preg_match('/\w\w*Action$/', $action)){
 				$method = $action."Action";
-				$array_params_request = [$request , $params];			
+				//$array_params_request = [$request , $params];			
 		// le añadimos "Action" al final
 		}
 		try{
 				
 			if ( method_exists($this, $method) ){				
 			//var_dump($method, $params , $request);
-			return call_user_func_array( [$this,$method], $array_params_request);
+			$array_params_request = [$request , $params];
 
+			//var_dump(	$array_params_request	);	
+			return call_user_func_array( [$this,$method],$array_params_request);
 
 				// DONE:
 				// es: Piensa e implementa una solución para que el parámetro $request no se pierda
