@@ -2,8 +2,9 @@
 
 
 use controller\HomeController;
-
+include "config.php";
 class Routing{
+	
 
 	/**
 	 * Objeto de tipo Routes
@@ -16,6 +17,7 @@ class Routing{
 	}
 	// TODO: Implementar el método buildRoutes
 	public function buildRoutes(){
+		$routes = $GLOBALS['config'] ['routes'];
 		$contents = file_get_contents(__DIR__."/config/routes.json");
 		//guardo en la variable $contents la informacion de routes.json
 		// file_get_contents me devuelve un string que contiene todos los elementos del array del archivo routes.json
