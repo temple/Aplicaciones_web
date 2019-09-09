@@ -51,8 +51,8 @@ class FrontController
 		$action = $this->routing->getAction($this->request_uri);
 		
 		$controller->callAction($this->request_uri, $action, $this->params);
-		//$controller->{$action."Action"}($request,$this->params);
-		//call_user_func_array([$controller,$action."Action"], [$request,$this->params]);
+		//$controller->{$action."Action"}($this->request_uri,$this->params);
+		//call_user_func_array([$controller,$action."Action"], [$$this->request_uri,$this->params]);
 		exit;
 
 
