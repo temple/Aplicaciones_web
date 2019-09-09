@@ -21,12 +21,29 @@ class FrontController
 	//TODO: Esto lo tiene que hacer FrontController
 	// en una función.
 	// crea esta función. No olvides mirar el código de public/index.php 
+	/**
+	 * Función que se ejecuta para dar una respuesta
+	 * a la petición.
+	 * @internal Esta función se ejecuta desde index.php
+	 * Si se comenta la línea en que se ejecuta run, la aplicación no se ejecuta
+	 * 
+	 */
+	public function run()
+	{
+		$this->request_uri = $_SERVER['REQUEST_URI'];
+		$this->request_uri = parse_url($this->request_uri);
+		$this->request_uri = $this->request_uri['path'];
+		$this->params = array_merge($_GET,$_POST);
 
-	public function run(){
+		$controller = $this->routing->getController($this->request_uri);
+		$action = $this->routing->getAction($this->request_uri);
+		
+		$controller->callAction($this->request_uri, $action, $this->params);
+		//$controller->{$action."Action"}($request,$this->params);
+		//call_user_func_array([$controller,$action."Action"], [$request,$this->params]);
+		exit;
 
-		$ruta = $_SERVER["REQUEST_URI"];
-		$this->request_uri = $ruta;	
-		var_dump($this->request_uri);
+	}
 						}
 
 }

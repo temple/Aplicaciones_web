@@ -12,6 +12,7 @@ abstract class AbstractController{
 	 * @var IndexControllerInterface
 	 */
 
+	 
 	protected $errorController;	
 
 	// TODO:
@@ -38,10 +39,13 @@ abstract class AbstractController{
 		if (FALSE == preg_match('/\w\w*Action$/', $action))
 			$method = $action."Action";
 		// le añadimos "Action" al final
-		try{
-			if ( method_exists($this, $method) )			
-					return call_user_func_array([$this,$method], $params);
-				// TODO:
+		try {
+			if ( method_exists($this, $method) ){	
+					$array_params_request = [$request, $params];	
+					return call_user_func_array([$this,$method], $array_params_request);
+					 }
+
+				// DONE:
 				// es: Piensa e implementa una solución para que el parámetro $request no se pierda
 				// en: Plan a solution in order to use the $request parameter, which is missed currently
 			else
