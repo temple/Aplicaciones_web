@@ -8,18 +8,20 @@ class HomeController
 	{
 
 
-	function indexAction($this->request_uri,$this->params){
+	public function indexAction($params){
 
-		$vista = file_get_contents(__DIR__."../view/home.html");
-		echo $vista;
+		$request=$params['request'];
+        $parametros=$params['params'];
+		include __DIR__."/../view/vista-index.php";
 
 	}
 
-	function index ($this->request_uri,$this->params){
- 		$vista = file_get_contents(__DIR__."../view/home.html");
-		echo $vista;
+	public function premiumAction ($params){
+ 		$request=$params['request'];
+        $parametros=$params['params'];
+		include __DIR__."/../view/vista-premium.php";
  	}
 
 
-	//TODO: Crea el método adecuado para que se muestren las vistas correspondientes a las acciones: index y premium
+	//Done: Crea el método adecuado para que se muestren las vistas correspondientes a las acciones: index y premium
 }

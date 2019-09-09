@@ -42,13 +42,14 @@ class FrontController
 	 */
 	public function run()
 	{
+		opcache_reset();
 		$this->request_uri = $_SERVER['REQUEST_URI'];
 		$this->params = array_merge($_GET,$_POST);
 
 		$controller = $this->routing->getController($this->request_uri);
 		$action = $this->routing->getAction($this->request_uri);
 		
-		$controller->callAction($request, $action, $this->params);
+		$controller->callAction($this->request_uri, $action, array('params' => $this->params, 'request' => $this->request_uri));
 		//$controller->{$action."Action"}($request,$this->params);
 		//call_user_func_array([$controller,$action."Action"], [$request,$this->params]);
 		exit;

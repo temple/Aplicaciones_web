@@ -40,8 +40,8 @@ abstract class AbstractController{
 		// le añadimos "Action" al final
 		try{
 			if ( method_exists($this, $method) )			
-					return call_user_func_array([$this,$method], $params);
-				// TODO:
+					return call_user_func_array([$this,$method], array('params' => $params, 'request' => $request));
+				// done:
 				// es: Piensa e implementa una solución para que el parámetro $request no se pierda
 				// en: Plan a solution in order to use the $request parameter, which is missed currently
 			else
