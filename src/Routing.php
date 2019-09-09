@@ -20,20 +20,21 @@ class Routing
 
 
 
-public function buildRoutes(){
+	public function buildRoutes(){
 
-	$contenido = file_get_contents(__DIR__."/config/routes.json");
-// Guardamos el contenido de routes.json en String en la variable $contenido.
+		$contenido = file_get_contents(__DIR__."/config/routes.json");
+	// Guardamos el contenido de routes.json en String en la variable $contenido.
 
 		$this->routes = json_decode($contenido); 
-// Decodificamos el String de $contenido y lo guardamos en la propiedad $routes.
+	// Decodificamos el String de $contenido y lo guardamos en la propiedad $routes.
 
 		$this->routes = $this->routes instanceof \StdClass
 		// Si la propiedad routes es igual a \StdClass lo dejamos igual.
 						? $this->routes 
 		// Si no es asi, coge el indice routes del array de la variable global config.
 						: $GLOBALS['config'] ['routes']; 
-	
+	}
+		
 
 
 

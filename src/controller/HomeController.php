@@ -2,12 +2,20 @@
 
 namespace controller;
 
-class HomeController{
+class HomeController
+	extends AbstractController
+{
+ 
+  	public $request;
+  	public $params;
 
-	public $request;
-	public $params;
-	
-	public function indexAction($request, $params){
-		include __DIR__."/../view/vista.php";
-	}
+ public function IndexAction($request , $params) {
+ 	include __DIR__."/../view/vista.php";
+ }
+
+ public function PremiumAction($request , $params) {
+ 	include __DIR__."/../view/vista.php";
+ }
+
+
 }
