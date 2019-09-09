@@ -26,7 +26,8 @@ class FrontController
 
 		$ruta = $_SERVER["REQUEST_URI"];
 		$this->request_uri = $ruta;	
-	}
+		var_dump($this->request_uri);
+						}
 
 }
 ?>
