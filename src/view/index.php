@@ -7,8 +7,8 @@
 <body>
 	
 <?php
-
-var_dump($request, $this->param);
+	echo "pagina Index";
+	var_dump($request, $params);
 ?>
 
 </body>

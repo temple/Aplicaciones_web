@@ -10,5 +10,11 @@ public function indexAction($request , $params) {
 		include __DIR__."/../view/home.php";
 
 	}
+	public function premiumAction($request , $params) {
 	
+		include __DIR__."/../view/homepremium.php";
+
+	}
+	
+
 }

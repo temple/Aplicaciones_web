@@ -16,7 +16,7 @@
 
 	"logout" :{
 		"controller": "LoginController",
-		"action": "logout"
+		"action": "indexAction"
 	},
 
 	"404" : {

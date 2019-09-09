@@ -7,6 +7,7 @@ $paths =<<<PATHS
 		"action": "index"
 	},
 
+
 	"home/premium": {
 		"controller": "HomeController",
 		"action": "premium"
