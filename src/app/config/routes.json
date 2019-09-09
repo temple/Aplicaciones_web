@@ -1,4 +1,13 @@
 {
+	"contact":{
+		"" : "ContactController"
+	},
+
+	"ajax/contact" : {
+		"controller":,
+		"" : "processContactAjax"
+	},
+
 	"home": {
 		"controller" : "HomeController",
 		"action": "index"
