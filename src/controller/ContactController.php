@@ -1,21 +1,36 @@
 <?php
+namespace controller;
 
-class ContactController{
 
-	//TODO: Implementa la acción que recogerá los datos enviados 
+class ContactController
+	extends AbstractController
+{
+	public $request;
+	public $params;
+
+	//DONE: Implementa la acción que recogerá los datos enviados 
 	//      mediante el envio por AJAX de un formulario
 	//      la acción se llamará processContactAjaxAction
-	public function ...... {
+	public function processContactAjaxAction (){
+		
 		// TODO: Haz que se verifique la $request recibida
 		//       y que estén todos los datos que se esperan,
 		//       dentro del parámetro $params
+		sleep(2); //simula un retardo (3sec) para ver el funcionamiento de beforeSend de ajax
+		//recibo por POST el email del form
+		$email = $_POST['email'];
 
-		return json_encode($message);
+		if(!empty($email)){ //si la variable NO está vacía
+		echo json_encode("Email recibido OK");
+		}else{
+		echo json_encode("Email recibido KO");
+		}
+		//echo json_encode("hola");
 	}
 
 	//TODO: Completa la implementación de indexAction
 	//      para que muestre un formulario que funcione via ajax
-	public function indexAction(){
-		include "../view/contact.html.php";
+	public function indexAction($request , $params){
+		include __DIR__."/../view/contact.html.php";
 	}
 }

@@ -2,6 +2,16 @@
 
 $paths =<<<PATHS
 {
+	"contact":{
+		"controller" : "ContactController",
+		"action"	:	"indexAction"
+	},
+
+	"ajax/contact" : {
+		"controller":"ContactController",
+		"action" : "processContactAjax"
+	},
+	
 	"home": {
 		"controller" : "HomeController",
 		"action": "index"
@@ -11,7 +21,7 @@ $paths =<<<PATHS
 		"controller": "HomeController",
 		"action": "premium"
 	},
-
+	
 	"login" : {
 		"controller": "LoginController",
 		"action": null
@@ -36,5 +46,5 @@ PATHS;
 $paths = json_decode($paths);
 
 $GLOBALS['config']= array(
-	"routes" => $paths;
+	"routes" => $paths
 );
