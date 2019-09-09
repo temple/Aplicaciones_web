@@ -35,12 +35,14 @@ abstract class AbstractController{
 	{
 		$method = $action;
 		//  Si la acción solicitada no termina en "Action"..
-		if (FALSE == preg_match('/\w\w*Action$/', $action))
+		if (FALSE == preg_match('/\w\w*Action$/', $action)){
 			$method = $action."Action";
+			$array_params = [$request , $params];
+		}
 		// le añadimos "Action" al final
 		try{
 			if ( method_exists($this, $method) )			
-					return call_user_func_array([$this,$method], $params);
+					return call_user_func_array([$this,$method], $array_params);
 				// TODO:
 				// es: Piensa e implementa una solución para que el parámetro $request no se pierda
 				// en: Plan a solution in order to use the $request parameter, which is missed currently
