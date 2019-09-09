@@ -33,14 +33,16 @@ abstract class AbstractController{
 	 */
 	public function callAction($request, string $action, array $params = [])
 	{
+		//$this->params[] = array('params' => $params, 'request' => $request);
 		$method = $action;
 		//  Si la acción solicitada no termina en "Action"..
 		if (FALSE == preg_match('/\w\w*Action$/', $action))
 			$method = $action."Action";
 		// le añadimos "Action" al final
 		try{
-			if ( method_exists($this, $method) )			
-					return call_user_func_array([$this,$method], array('params' => $params, 'request' => $request));
+			if ( method_exists($this, $method))		
+
+					return call_user_func_array([$this,$method], array($request, $params));
 				// done:
 				// es: Piensa e implementa una solución para que el parámetro $request no se pierda
 				// en: Plan a solution in order to use the $request parameter, which is missed currently

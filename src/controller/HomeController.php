@@ -8,17 +8,12 @@ class HomeController
 	{
 
 
-	public function indexAction($params){
-
-		$request=$params['request'];
-        $parametros=$params['params'];
+	public function indexAction($request,$params){;
 		include __DIR__."/../view/vista-index.php";
 
 	}
 
-	public function premiumAction ($params){
- 		$request=$params['request'];
-        $parametros=$params['params'];
+	public function premiumAction ($request,$params){
 		include __DIR__."/../view/vista-premium.php";
  	}
 
