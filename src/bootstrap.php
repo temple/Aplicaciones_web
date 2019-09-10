@@ -7,8 +7,8 @@
 if (is_dir(__DIR__.'/app/'))
 	define("APP_DIR",__DIR__.'/app/');
 
-if (is_dir(__DIR__.'/app/config/'))
-	define("CONFIG_DIR",__DIR__.'/app/config/');
+if (is_dir(APP_DIR.'config/'))
+	define("CONFIG_DIR",APP_DIR.'config/');
 
 // Lógica de fase de Bootstrapping
 // En la fase de Bootstrapping se carga la configuración
@@ -80,7 +80,7 @@ if (defined("CONFIG_DIR")){
     require_once __DIR__.'/../vendor/autoload.php';
 
     // Definición de la clase que representará la aplicación
-	if (array_key_exists('app', $GLOBALS['config']){
+	if (array_key_exists('app', $GLOBALS['config'])){
 		$application = ((string)($GLOBALS['app']['namespace'])).((string)($GLOBALS['app']['class']));
 	}
 
