@@ -8,6 +8,6 @@ require_once __DIR__.'/../src/bootstrap.php';
 
 $reflector = new \ReflectionClass(APP);
 $app = $reflector->newInstance();
-if (app instanceof AppInterface)
+if ($app instanceof ApplicationInterface)
 	$app->run();
 exit;
