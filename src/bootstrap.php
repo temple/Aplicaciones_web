@@ -80,7 +80,7 @@ if (defined("CONFIG_DIR")){
     require_once __DIR__.'/../vendor/autoload.php';
 
     // Definición de la clase que representará la aplicación
-	if (array_key_exists('app', $GLOBALS['config']){
+	if (array_key_exists('app', $GLOBALS['config'])){
 		$application = ((string)($GLOBALS['app']['namespace'])).((string)($GLOBALS['app']['class']));
 	}
 
