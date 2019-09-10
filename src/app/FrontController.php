@@ -2,6 +2,7 @@
 
 include "config.php";
 class FrontController
+	implements ApplicationInterface
 {
 	/**
 	 * Componente de enrutamiento que será del tipo RoutingInterface
