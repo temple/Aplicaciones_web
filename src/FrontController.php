@@ -32,6 +32,11 @@ class FrontController
 	{
 		$this->routing = new Routing();
 	}
+	public function run(){
+		$this->request_uri = $_SERVER['REQUEST_URI'];
+		
+	}
+	
 
 	/**
 	 * Función que se ejecuta para dar una respuesta
