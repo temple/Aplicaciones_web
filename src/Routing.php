@@ -4,7 +4,7 @@ use controller\HomeController;
 use controller\AbstractController as IdxController;
 
 class Routing
-	// implements RoutingInterface
+	 implements RoutingInterface
 	//implementacion RoutingInterface
 {
 
