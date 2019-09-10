@@ -15,12 +15,12 @@ class ErrorController
 	// en: Import IndexControllerInterface
 {	
 
-	public function IndexAction(/* CHANGE ME*/);
+	public function indexAction(/* CHANGE ME*/);
 	//TODO:
 	// es: Implementa la función y haz que muestre una vista de error
 	// en: Implement function and make it show an error view
 
-	//TODO:
+	//TODO (PAUSED):
 	// es: Haz que la vista de error muestre el mensaje del error ocurrido
 	// en: Make the error view show the message of the error 
 
