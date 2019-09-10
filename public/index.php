@@ -4,8 +4,8 @@ error_reporting(E_ALL);
 // 'display_errors' es el "flag" que activa (1) o desactiva (0) la visualización en pantalla del reporte
 ini_set('display_errors', 1);
 
-$front = new FrontController();
-$front->run();
+//$front = new FrontController();
+//$front->run();
 require_once __DIR__.'/../src/bootstrap.php';
 
 $reflector = new \ReflectionClass(APP);
