@@ -1,10 +1,12 @@
 <?php
 
-
 use controller\HomeController;
+use controller\AbstractController as IdxController;
 include "config.php";
-class Routing{
-	
+class Routing
+	// implements RoutingInterface
+	//implementacion RoutingInterface
+{
 
 	/**
 	 * Objeto de tipo Routes
@@ -15,7 +17,7 @@ class Routing{
 	public function __construct(){
 		$this->buildRoutes();
 	}
-	// TODO: Implementar el método buildRoutes
+	
 	public function buildRoutes(){
 		$routes = $GLOBALS['config'] ['routes'];
 		$contents = file_get_contents(__DIR__."/config/routes.json");
@@ -34,10 +36,20 @@ class Routing{
 
 
 	}	
-
-
+	// DONE: Implementar el método buildRoutes
 	
-	// la propiedad $routes tendrá que responder TRUE
-	// a la pregunta $this->routes instanceof \StdClass
+	public function getController(string $uri) : IdxController{
+		$routesArray =  (array) $this->routes; // $this->routes es un objeto y necesitamos modificar a array.
+		$uri =ltrim($uri , "/");// se crea variable donde se elimina "/" de $uri
+		$result = $routesArray [$uri]->controller; // se crea variable donde guardamos string que queremos 
+		$result = is_null($result) // si $resultObject es null o no está creado 
+				?"controller\\ErrorController" //retorna "index"
+				:"controller\\".$result;
+		$reflector = new \ReflectionClass($result); 
+		return $reflector->newInstance(); 
 
+	}
+	
+	// TODO: Implementar las funciones necesarias 
+	// para que Routing cumpla con la interfaz RoutingInterface 
 }
