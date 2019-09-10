@@ -4,19 +4,23 @@ namespace controller;
 //DONE:
 // es: Determinar el namespace correcto
 // en: Determine the right namespace
+use controller\AbstractController as IdxController;
+use controller\IndexControllerInterface as IdxInterface;
 
 class ErrorController
-	extends AbstractController	
+
 	//DONE: 
 	// es: relacionar correctamente con AbstractController
     // en: relate in the right manner with AbstractController
-	//implements IndexControllerInterface
-	//DONE:
+	implements IdxInterface
+	//DO\app\
 	// es: Importar IndexControllerInterface
 	// en: Import IndexControllerInterface
 {	
 
-	public function indexAction(/* CHANGE ME*/);
+	public function indexAction($request,array $params){
+		include __DIR__."/../view/error.html.php";
+	}
 	//TODO:
 	// es: Implementa la función y haz que muestre una vista de error
 	// en: Implement function and make it show an error view
