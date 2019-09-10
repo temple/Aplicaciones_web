@@ -74,3 +74,18 @@ if (defined("CONFIG_DIR")){
 
 	}
 }
+
+// Lógica de la carga de la aplicación (dentro de la fase de bootstrapping)
+//   Carga del sistema de Autoloading
+    require_once __DIR__.'/../vendor/autoload.php';
+
+    // Definición de la clase que representará la aplicación
+	if (array_key_exists('app', $GLOBALS['config']){
+		$application = ((string)($GLOBALS['app']['namespace'])).((string)($GLOBALS['app']['class']));
+	}
+
+// Se definen las constantes APP
+// que contiene el nombre de la clase que representa la aplicación
+// y que por tanto se puede ejecutar
+define("APP",$application);
+unset($application);
