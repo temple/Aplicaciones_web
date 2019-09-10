@@ -16,5 +16,5 @@ class HomeController
 		include __DIR__."/../view/home.php";
 	}
 
-	//TODO: Crea el método adecuado para que se muestren las vistas correspondientes a las acciones: index y premium
+	//DONE: Crea el método adecuado para que se muestren las vistas correspondientes a las acciones: index y premium
 }
