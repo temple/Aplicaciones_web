@@ -81,7 +81,7 @@ if (defined("CONFIG_DIR")){
 
     // Definición de la clase que representará la aplicación
 	if (array_key_exists('app', $GLOBALS['config'])){
-		$application = ((string)($GLOBALS['app']['namespace'])).((string)($GLOBALS['app']['class']));
+		$application = ((string)($GLOBALS['config']['app']['front']['namespace'])).((string)($GLOBALS['config']['app']['front']['class']));
 	}
 
 // Se definen las constantes APP
