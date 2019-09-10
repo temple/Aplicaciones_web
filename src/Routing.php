@@ -4,7 +4,7 @@ use controller\HomeController;
 use controller\AbstractController as IdxController;
 include "config.php";
 class Routing
-	// implements RoutingInterface
+	implements RoutingInterface
 	//implementacion RoutingInterface
 {
 
@@ -39,7 +39,7 @@ class Routing
 	// DONE: Implementar el método buildRoutes
 	
 	public function getController(string $uri) : IdxController{
-		$routesArray =  (array) $this->routes; // $this->routes es un objeto y necesitamos modificar a array.
+		$routesArray =  (array) $this->routes; // $this->routes es un OBJETO y necesitamos modificar a array.
 		$uri =ltrim($uri , "/");// se crea variable donde se elimina "/" de $uri
 		$result = $routesArray [$uri]->controller; // se crea variable donde guardamos string que queremos 
 		$result = is_null($result) // si $resultObject es null o no está creado 
@@ -47,6 +47,15 @@ class Routing
 				:"controller\\".$result;
 		$reflector = new \ReflectionClass($result); 
 		return $reflector->newInstance(); 
+
+	}
+	public function getAction(string $uri) : string{
+		$routesArray =  (array) $this->routes; // $this->routes es un objeto, se modifica a array.
+		$uri =ltrim($uri , "/");// se crea variable donde se elimina "/" de $uri
+		$result = $routesArray [$uri]->action; // se crea variable donde guardamos string que queremos 
+		return is_null($result) // si $result es null o no está creado 
+				?"index" //retorna "index"
+				:$result; // si no es null retorna $result
 
 	}
 	
