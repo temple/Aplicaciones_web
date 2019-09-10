@@ -1,10 +1,10 @@
 <?php
-
+include "config.php";
 use controller\HomeController;
 use controller\AbstractController as IdxController;
-include "config.php";
+
 class Routing
-	implements RoutingInterface
+	// implements RoutingInterface
 	//implementacion RoutingInterface
 {
 
