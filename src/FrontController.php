@@ -1,9 +1,8 @@
 <?php
 
-<<<<<<< HEAD
+
 include "config.php";
-=======
->>>>>>> kyomi_RoutingInterface
+
 class FrontController
 {
 	/**
@@ -25,7 +24,7 @@ class FrontController
 	 */
 	public $params;
 
-<<<<<<< HEAD
+	protected $request_uri;
 	/**
 	 * Constructor
 	 * Crea el componente de Routing que permitirá averiguar
@@ -37,6 +36,7 @@ class FrontController
 		$this->routing = new Routing();
 	}
 
+	public $params;
 	/**
 	 * Función que se ejecuta para dar una respuesta
 	 * a la petición.
@@ -47,27 +47,29 @@ class FrontController
 	public function run()
 	{
 		$this->request_uri = $_SERVER['REQUEST_URI'];
+		//var_dump(parse_url($this->request_uri));
+		$this->request_uri= parse_url($this->request_uri);
+		//var_dump($this->uri_array);
+		$this->request_uri = $this->request_uri['path'];
+
 		$this->params = array_merge($_GET,$_POST);
 
 		$controller = $this->routing->getController($this->request_uri);
 		$action = $this->routing->getAction($this->request_uri);
 		
-		$controller->callAction($request, $action, $this->params);
+		$controller->callAction($this->request_uri, $action, $this->params);
 		//$controller->{$action."Action"}($request,$this->params);
 		//call_user_func_array([$controller,$action."Action"], [$request,$this->params]);
 		exit;
 
-
 	}
-=======
 	protected $request_uri;
 	
 	public function __construct(){
 		$this->routing = new Routing();
 	}
 	// en una función.
-	// crea esta función. No olvides mirar el código de public/index.php 
->>>>>>> kyomi_RoutingInterface
+	// crea esta función. No olvides mirar el código de public/index.php
 
 	public function run(){
 
