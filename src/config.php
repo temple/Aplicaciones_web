@@ -7,6 +7,7 @@ $paths =<<<PATHS
 		"action": "index"
 	},
 
+
 	"home/premium": {
 		"controller": "HomeController",
 		"action": "premium"
@@ -36,5 +37,5 @@ PATHS;
 $paths = json_decode($paths);
 
 $GLOBALS['config']= array(
-	"routes" => $paths;
+	"routes" => $paths
 );
