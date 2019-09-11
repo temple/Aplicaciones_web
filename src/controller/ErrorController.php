@@ -1,4 +1,4 @@
-[10:53 p. m., 11/9/2019] Amor: <?php
+<?php
 
 namespace controller;
 
