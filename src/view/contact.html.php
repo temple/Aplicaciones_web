@@ -11,11 +11,11 @@
 </head>
 <body>
 	<form method="post" id="ajaxform">
-			<h3>Ajax form</h3>
-			<input type="email" id="email" name="email" placeholder="Email">
-			<input type="text" id="asunto" name="asunto" placeholder="Asunto">
-			<input type="text" id="mensaje" name="mensaje" placeholder="Mensaje">
-			<input type="button" id="btn" value="Enviar Form">
+			<h3>Contacte con nosotros </h3>
+			<input type="email" id="email" name="email" placeholder="Su Email">
+			<input type="text" id="asunto" name="asunto" placeholder="Asunto del mensaje">
+			<textarea type="text" id="mensaje" name="mensaje" placeholder="Que quiere decirnos???"></textarea>
+			<input type="button" id="btn" value="Enviar su mensaje">
 			<!--Caja de mensajes de validación y respuesta del server -->
 			<div id="data"></div>
 		</form>
