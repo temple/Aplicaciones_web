@@ -48,6 +48,17 @@ class Routing
 				:$result; // si no es null retorna $result
 
 	}
+	public function getController(string $uri) : IdxController{
+		$routesArray =  (array) $this->routes; // $this->routes es un OBJETO y necesitamos modificar a array.
+		$uri =ltrim($uri , "/");// se crea variable donde se elimina "/" de $uri
+		$result = $routesArray [$uri]->controller; // se crea variable donde guardamos string que queremos 
+		$result = is_null($result) // si $resultObject es null o no está creado 
+				?"controller\\ErrorController" //retorna "index"
+				:"controller\\".$result;
+		$reflector = new \ReflectionClass($result); 
+		return $reflector->newInstance(); 
+
+	}
 	
 	// DONE: Implementar las funciones necesarias 
 	// para que Routing cumpla con la interfaz RoutingInterface 

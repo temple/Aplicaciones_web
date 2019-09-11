@@ -32,10 +32,7 @@ class FrontController
 	{
 		$this->routing = new Routing();
 	}
-	public function run(){
-		$this->request_uri = $_SERVER['REQUEST_URI'];
-		
-	}
+	
 	
 
 	/**
@@ -48,7 +45,10 @@ class FrontController
 	public function run()
 	{
 		$this->request_uri = $_SERVER['REQUEST_URI'];
-		//funcion  referente a url ? https://www.php.net/manual/es/ref.url.php
+		
+		
+		$this->request_uri = parse_url($this->request_uri);
+		$this->request_uri = $this->request_uri['path'];
 		
 
 		$this->params = array_merge($_GET,$_POST);
@@ -56,7 +56,7 @@ class FrontController
 		$controller = $this->routing->getController($this->request_uri);
 		$action = $this->routing->getAction($this->request_uri);
 		
-		$controller->callAction($request, $action, $this->params);
+		$controller->callAction($this->request_uri, $action, $this->params);
 		//$controller->{$action."Action"}($request,$this->params);
 		//call_user_func_array([$controller,$action."Action"], [$request,$this->params]);
 		exit;
