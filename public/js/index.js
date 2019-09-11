@@ -33,7 +33,7 @@ $(document).ready(function() {
 
                 //configuración de envío de datos
                 type: "post", //tipo de envío mediante POST
-                url: "../src/dataForm.php", //archivo que es llamado en el server
+                url: "ajax/contact", //archivo que es llamado en el server
                 dataType: "json", //tipo de dato en formato json
                 data: $("#ajaxform").serialize(), //datos que se envían del formulario en formato: name:valor
                 //------------------------------------------------------
