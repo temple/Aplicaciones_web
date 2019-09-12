@@ -4,7 +4,8 @@
 	<title>test pagina error</title>
 </head>
 <body>
-	<?php echo "error 404";
+	<?php 
+	echo "PAGINA ERROR";
 
 	 ?>
 

@@ -6,9 +6,8 @@ use controller\IndexControllerInterface;
 // es: Determinar el namespace correcto
 // en: Determine the right namespace
 
-class ErrorController
- extends AbstractController
-	//TODO: 
+class ErrorController extends AbstractController
+	//DONE: 
 	// es: relacionar correctamente con AbstractController
     // en: relate in the right manner with AbstractController
 	implements IndexControllerInterface
@@ -17,7 +16,8 @@ class ErrorController
 	// en: Import IndexControllerInterface
 {	
 
-	public function indexAction($request , $params) {
+	public function errorAction($request , $params) {
+		
 		include __DIR__."/../view/error.php";
 	}
 	//DONE:

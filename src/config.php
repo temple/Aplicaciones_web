@@ -11,6 +11,10 @@ $paths =<<<PATHS
 		"controller": "HomeController",
 		"action": "premium"
 	},
+	"premium": {
+		"controller": "HomeController",
+		"action": "premium"
+	},
 
 	"login" : {
 		"controller": "LoginController",
