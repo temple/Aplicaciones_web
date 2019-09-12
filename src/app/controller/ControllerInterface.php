@@ -1,6 +1,6 @@
 <?php
 
-namespace;
+namespace controller;
 
 //TODO:
 //es: poner el namespace correcto

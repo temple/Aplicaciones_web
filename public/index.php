@@ -1,8 +1,8 @@
 <?php
-// Activación del reporte de todos los errores y mensajes informativos
+
+//require_once __DIR__."/../vendor/autoload.php";
 error_reporting(E_ALL);
-// 'display_errors' es el "flag" que activa (1) o desactiva (0) la visualización en pantalla del reporte
-ini_set('display_errors', 1);
+ini_set("display_errors", 1);
 
 require_once __DIR__.'/../src/bootstrap.php';
 
