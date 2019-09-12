@@ -1,6 +1,5 @@
 <?php
 
-include __DIR__."/../config.php";
 class FrontController
 	implements ApplicationInterface
 {
