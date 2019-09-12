@@ -14,7 +14,8 @@ class ErrorController extends AbstractController
 	//TODO:
 	// es: Importar IndexControllerInterface
 	// en: Import IndexControllerInterface
-{	
+{	public $request;
+	public $params;
 
 	public function errorAction($request , $params) {
 		
