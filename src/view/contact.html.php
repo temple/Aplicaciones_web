@@ -12,8 +12,8 @@
 <body>
 	<form method="post" id="ajaxform">
 			<h3>Contacte con nosotros </h3>
+			<input type="text" id="nombre" name="nombre" placeholder="Nombre">
 			<input type="email" id="email" name="email" placeholder="Su Email">
-			<input type="text" id="asunto" name="asunto" placeholder="Asunto del mensaje">
 			<textarea type="text" id="mensaje" name="mensaje" placeholder="Que quiere decirnos???"></textarea>
 			<input type="button" id="btn" value="Enviar su mensaje">
 			<!--Caja de mensajes de validación y respuesta del server -->

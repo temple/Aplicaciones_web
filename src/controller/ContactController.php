@@ -15,23 +15,21 @@ extends AbstractController
 		//       y que estén todos los datos que se esperan,
 		//       dentro del parámetro $params
 	
-		if ($_POST['email']==""){
-
-			$message =  "No incluyo ningún email. Por favor, revise el formulario";
-			//echo json_encode ($message); 
+		if (empty($params['email'])){
+			$message = false;
 		} 
-		elseif ($_POST['asunto']==""){
-			$message = "No incluyo ningún asunto. Por favor, revise el formulario";
+		elseif (empty($params['nombre'])){
+			$message = false;
 		}
-		elseif ($_POST['mensaje']=="") {
-			$message = "No incluyo ningún mensaje. No tiene nada que decirnos???? 
-			Por favor, revise el formulario";
+		elseif (empty($params['mensaje'])) {
+			$message = false;
 		}
 		else { //si todo está relleno ;
-			$message =  "Tu mensaje se ha enviado correctamente. En breve recibirá contestación."; 
+			$message =  "DATOS RECIBIDOS CORRECTAMENTE."; 
 			//echo json_encode($message);
 		}
 		echo json_encode($message);
+		
 	}
 
 	//DONE: Completa la implementación de indexAction
