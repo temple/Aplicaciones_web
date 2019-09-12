@@ -1,13 +1,4 @@
 {
-	"contact":{
-		"" : "ContactController"
-	},
-
-	"ajax/contact" : {
-		"controller":,
-		"" : "processContactAjax"
-	},
-
 	"home": {
 		"controller" : "HomeController",
 		"action": "index"
@@ -37,3 +28,11 @@
 		"action": "indexAction"
 	}
 }
+PATHS;
+
+$paths = json_decode($paths);
+//var_dump($paths);
+
+$GLOBALS['config']= array(
+	"routes" => $paths)
+;
