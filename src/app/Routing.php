@@ -1,7 +1,7 @@
 <?php
 
 
-use controller\HomeController;
+use Home\controller\HomeController;
 use controller\AbstractController as IdxController;
 
 class Routing

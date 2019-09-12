@@ -25,7 +25,18 @@
 		"controller": "ErrorController",
 		"module": "Error",
 		"action": "indexAction"
+	},
 
+	"contact":{
+		"controller" : "ContactController",
+		"module": "Contact",
+		"action": "index"
+	},
+
+	"ajax/contact" : {
+		"controller": "ContactController",
+		"action" : "processContactAjax",
+		"module" : "Contact"
 	},
 
 	"error": {
