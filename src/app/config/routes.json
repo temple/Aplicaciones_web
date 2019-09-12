@@ -1,10 +1,9 @@
-<?php
-
-$paths =<<<PATHS
 {
+
 	"home": {
 		"controller" : "HomeController",
-		"action": "index"
+		"action": "index",
+		"module": "home"
 	},
 
 	"home/premium": {
@@ -23,18 +22,13 @@ $paths =<<<PATHS
 	},
 
 	"404" : {
-		"controller": "ErrorController"
+		"controller": "ErrorController",
+		"module": "Error"
 	},
 
 	"error": {
 		"controller": "ErrorController",
-		"action": "indexAction"
+		"action": "indexAction",
+		"module": "Error"
 	}
 }
-PATHS;
-
-$paths = json_decode($paths);
-
-$GLOBALS['config']= array(
-	"routes" => $paths
-);

@@ -35,9 +35,11 @@ class Routing
 		$routesArray =  (array) $this->routes; // $this->routes es un objeto y necesitamos modificar a array.
 		$uri =ltrim($uri , "/");// se crea variable donde se elimina "/" de $uri
 		$result = $routesArray [$uri]->controller; // se crea variable donde guardamos string que queremos 
-		$result = is_null($result) // si $resultObject es null o no está creado 
-				?"controller\\ErrorController" //retorna "index"
-				:"controller\\".$result;
+		$module = $routesArray [$uri]->module;// se crea variable donde guardamos string que queremos
+		
+		$result = is_null($result) // si $result es null o no está creado 
+				?"Error\\controller\\ErrorController" //retorna "index"
+				:$module."\\controller\\".$result; // Sino, añade string de module y busca ruta donde se encuentre el controller correcto.
 		$reflector = new \ReflectionClass($result); 
 		return $reflector->newInstance(); 
 

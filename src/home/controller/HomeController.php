@@ -1,9 +1,9 @@
 <?php
 
-namespace controller;
-
+namespace home\controller;
+use controller\AbstractController as IdxController;
 class HomeController
-	extends AbstractController
+	extends IdxController
 {
 	public $request;
 	public $params;
