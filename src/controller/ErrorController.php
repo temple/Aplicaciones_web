@@ -10,8 +10,8 @@ class ErrorController extends AbstractController
 	//DONE: 
 	// es: relacionar correctamente con AbstractController
     // en: relate in the right manner with AbstractController
-	implements IndexControllerInterface
-	//DONE:
+	// implements IndexControllerInterface
+	//TODO:
 	// es: Importar IndexControllerInterface
 	// en: Import IndexControllerInterface
 {	
