@@ -12,7 +12,7 @@ class FrontController
 
 	public function run(){
  		$this->request_uri	= $_SERVER['REQUEST_URI'];
- 		var_dump($this);
+ 		var_dump($this->request_uri);
 	}
 
 	//TODO: Que obtenga información del servidor en la que haya la ruta solicitada por el usuario en la request
