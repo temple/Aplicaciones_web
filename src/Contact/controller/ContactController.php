@@ -11,7 +11,7 @@ class ContactController
 	//TODO: Implementa la acción que recogerá los datos enviados 
 	//      mediante el envio por AJAX de un formulario
 	//      la acción se llamará processContactAjaxAction
-	public function processContactAjax($request, array $params) {
+	public function processContactAjaxAction($request, array $params) {
 		
 		
 				if (empty($params['email'])){
