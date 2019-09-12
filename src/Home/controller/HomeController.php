@@ -1,9 +1,11 @@
 <?php
 
-namespace controller;
+namespace Home\controller;
+
+use controller\AbstractController as IdxController;
 
 class HomeController
-	extends AbstractController
+	 extends IdxController
 
 	{
 
