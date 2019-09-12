@@ -13,7 +13,7 @@ interface RoutingInterface{
 	 * @param  string $uri ruta solicitada por el usuario
 	 * @return IndexControllerInterface objeto controller
 	 */
-	public function getController(string $uri) : IdxController;
+	
 
 	/**
 	 * Devuelve la acción que habrá que ejecutarse
@@ -21,5 +21,5 @@ interface RoutingInterface{
 	 * @param  string $uri ruta solicitada por el usuario
 	 * @return string|"index"   nombre de la acción a ejecutar
 	 */
-	public function getAction(string $uri) : string;
+	
 }

@@ -17,6 +17,10 @@
 		"controller": "HomeController",
 		"action": "premium"
 	},
+	"premium": {
+		"controller": "HomeController",
+		"action": "premium"
+	},
 
 	"login" : {
 		"controller": "LoginController",
@@ -34,6 +38,6 @@
 
 	"error": {
 		"controller": "ErrorController",
-		"action": "indexAction"
+		"action": "error"
 	}
 }

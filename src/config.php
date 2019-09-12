@@ -11,6 +11,10 @@ $paths =<<<PATHS
 		"controller": "HomeController",
 		"action": "premium"
 	},
+	"premium": {
+		"controller": "HomeController",
+		"action": "premium"
+	},
 
 	"login" : {
 		"controller": "LoginController",
@@ -32,9 +36,10 @@ $paths =<<<PATHS
 	}
 }
 PATHS;
+//var_dump($paths);
 
 $paths = json_decode($paths);
 
 $GLOBALS['config']= array(
-	"routes" => $paths;
+	"routes" => $paths
 );
