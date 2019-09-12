@@ -45,7 +45,7 @@ class FrontController
 	public function run()
 	{
 		$this->request_uri = $_SERVER['REQUEST_URI'];
-		
+		//funcion  referente a url ? https://www.php.net/manual/es/ref.url.php
 		
 		$this->request_uri = parse_url($this->request_uri);
 		$this->request_uri = $this->request_uri['path'];
