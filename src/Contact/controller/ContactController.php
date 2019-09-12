@@ -7,33 +7,29 @@ class ContactController
 		 extends IdxController
 
 {
+
 	//TODO: Implementa la acción que recogerá los datos enviados 
 	//      mediante el envio por AJAX de un formulario
 	//      la acción se llamará processContactAjaxAction
-	public function processContactAjax($request,$params) {
+	public function processContactAjax($request, array $params) {
 		
 		
-		sleep(2);
-		//       dentro del parámetro $params	 		
-		if((!(empty($params['email']))) && (!(empty($params['nombre']))) && (!(empty($params['mensaje'])))){
-			$massage = "DATOS RECIBIDOS CORRECTAMENTE";
+				if (empty($params['email'])){
+					$mensage = "Error en el email";
+				} 
+				elseif (empty($params['nombre'])){
+					$mensage = "Error en el nombre";
+				}
+				elseif (empty($params['mens'])) {
+					$mensage = "Error en el mensajr";
+				}
+				else {
+					$mensage =  "Todo correcto"; 
+					
+				}
+				echo json_encode($mensage);
 		
-		}else{
-		return json_encode($message);				
-		$massage = "FALSE";
-		}
-		echo json_encode($massage);
 			}
-
-		/*var_dump($email);
-			if(!empty($email)){ //si la variable NO está vacía
-				echo json_encode("Email recibido OK");
-				}else{
-				echo json_encode("Email recibido OK");
-			}
-			*/
-
-	
 		// TODO: Haz que se verifique la $request recibida
 		//       y que estén todos los datos que se esperan,
 		//       dentro del parámetro $params

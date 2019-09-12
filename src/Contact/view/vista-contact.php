@@ -57,7 +57,7 @@
 			<h3>Ajax form</h3>
 			<input class= "element" type="text" id="nombre" name="nombre" placeholder="Nombre">
 			<input  class= "element" type="email" id="email" name="email" placeholder="Email">
-			<input class= "element" type="text" id="mensaje" name="mensaje" placeholder="Mensaje">
+			<input class= "element" type="text" id="mens" name="mens" placeholder="Mensaje">
 			<input class= "element" type="button" id="btn" value="Enviar Form">
 			<!--Caja de mensajes de validación y respuesta del server -->
 			<div id="data"></div>
