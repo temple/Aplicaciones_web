@@ -27,7 +27,7 @@ class FrontController
 	 * @var array
 	 */
 	public $params;
-	protected $request_uri;
+	
 
 	/**
 	 * Constructor
