@@ -1,16 +1,9 @@
 {
-	"contact":{
-		"" : "ContactController"
-	},
-
-	"ajax/contact" : {
-		"controller":,
-		"" : "processContactAjax"
-	},
 
 	"home": {
 		"controller" : "HomeController",
-		"action": "index"
+		"action": "index",
+		"module": "home"
 	},
 
 	"home/premium": {
@@ -29,11 +22,13 @@
 	},
 
 	"404" : {
-		"controller": "ErrorController"
+		"controller": "ErrorController",
+		"module": "Error"
 	},
 
 	"error": {
 		"controller": "ErrorController",
-		"action": "indexAction"
+		"action": "indexAction",
+		"module": "Error"
 	}
 }
