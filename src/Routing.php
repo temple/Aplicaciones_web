@@ -20,4 +20,15 @@ class Routing{
 	// la propiedad $routes tendrá que responder TRUE
 		// a la pregunta $this->routes instanceof \StdClass
 
+
 }
+
+public function buildRoutes(){
+
+		
+		$content = file_get_contents(__DIR__."/config/routes.json");
+				
+		$this->routes = json_decode($content); 
+
+		$this->routes = $this->routes instanceof \StdClass
+	}
