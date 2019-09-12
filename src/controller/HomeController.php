@@ -5,6 +5,17 @@ namespace controller;
 class HomeController
 	extends AbstractController
 {
+ 
+  	public $request;
+  	public $params;
 
-	//TODO: Crea el método adecuado para que se muestren las vistas correspondientes a las acciones: index y premium
+ public function IndexAction($request , $params) {
+ 	include __DIR__."/../view/vista.php";
+ }
+
+ public function PremiumAction($request , $params) {
+ 	include __DIR__."/../view/vista.php";
+ }
+
+
 }
