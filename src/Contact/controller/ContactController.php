@@ -1,6 +1,10 @@
 <?php
 
+namespace Contact\controller;
+use controller\AbstractController as IdxController;
+
 class ContactController{
+		 extends IdxController
 
 	//TODO: Implementa la acción que recogerá los datos enviados 
 	//      mediante el envio por AJAX de un formulario
