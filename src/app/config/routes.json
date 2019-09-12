@@ -1,7 +1,9 @@
 {
 	"home": {
 		"controller" : "HomeController",
-		"action": "index"
+		"action": "index",
+		"module": "Home"
+
 	},
 
 	"home/premium": {
@@ -20,19 +22,17 @@
 	},
 
 	"404" : {
-		"controller": "ErrorController"
+		"controller": "ErrorController",
+		"module": "Error",
+		"action": "indexAction"
+
 	},
 
 	"error": {
 		"controller": "ErrorController",
-		"action": "indexAction"
+		"action": "indexAction",
+		"module": "Error"
 	}
 }
-PATHS;
 
-$paths = json_decode($paths);
-//var_dump($paths);
 
-$GLOBALS['config']= array(
-	"routes" => $paths)
-;
