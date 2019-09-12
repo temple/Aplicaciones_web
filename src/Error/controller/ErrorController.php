@@ -1,6 +1,6 @@
 <?php
 
-namespace controller;
+namespace Error\controller;
 //DONE:
 // es: Determinar el namespace correcto
 // en: Determine the right namespace
@@ -8,12 +8,12 @@ use controller\AbstractController as IdxController;
 use controller\IndexControllerInterface as IdxInterface;
 
 class ErrorController
-
+	extends IdxController
 	//DONE: 
 	// es: relacionar correctamente con AbstractController
     // en: relate in the right manner with AbstractController
 	implements IdxInterface
-	//DO\app\
+	//DONE
 	// es: Importar IndexControllerInterface
 	// en: Import IndexControllerInterface
 {	
