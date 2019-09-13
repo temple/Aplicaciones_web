@@ -18,9 +18,9 @@
     </header>
     <main>
         
-        </form> 
+        
         <section class="formulario">
-            <form id="ajaxform" method="post">
+            <form id="ajaxform" >
                 
                 <section class="input-container">
                     <i class="fa fa-user icon"></i>
