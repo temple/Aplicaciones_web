@@ -2,6 +2,16 @@
 
 $paths =<<<PATHS
 {
+	"contact":{
+		"controller" : "ContactController",
+		"action"	:	"indexAction"
+	},
+
+	"ajax/contact" : {
+		"controller":"ContactController",
+		"action" : "processContactAjax"
+	},
+
 	"home": {
 		"controller" : "HomeController",
 		"action": "index"
