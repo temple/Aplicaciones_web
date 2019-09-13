@@ -23,8 +23,6 @@ class FrontController
 	 * @var array
 	 */
 	public $params;
-
-	protected $request_uri;
 	/**
 	 * Constructor
 	 * Crea el componente de Routing que permitirá averiguar
@@ -35,8 +33,6 @@ class FrontController
 	{
 		$this->routing = new Routing();
 	}
-
-	public $params;
 	/**
 	 * Función que se ejecuta para dar una respuesta
 	 * a la petición.
@@ -63,8 +59,7 @@ class FrontController
 		exit;
 
 	}
-	protected $request_uri;
-	
+	/*
 	public function __construct(){
 		$this->routing = new Routing();
 	}
@@ -76,6 +71,6 @@ class FrontController
 	  $this->request_uri = $_SERVER["REQUEST_URI"];
 
 
-    }
+    }*/
 
 }

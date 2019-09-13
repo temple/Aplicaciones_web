@@ -4,16 +4,16 @@
 use controller\HomeController;
 use controller\AbstractController as IdxController;
 
-include "config.php";
+//include "config.php";
 
 class Routing
-
 	implements RoutingInterface
+{
+	protected $routes;
 
 	public function __construct(){
 		$this->buildRoutes();
 	}	
-
 	public function buildRoutes(){
 		$routes = $GLOBALS['config'] ['routes'];
 		
@@ -48,5 +48,5 @@ class Routing
 	}
 
 	// TODO: Implementar el método buildRoutes
-	// la propiedad $routes tendrá que responder TRUE
 
+}
