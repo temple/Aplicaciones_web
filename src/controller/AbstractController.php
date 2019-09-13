@@ -35,20 +35,25 @@ abstract class AbstractController{
 	{
 		$method = $action;
 		//  Si la acción solicitada no termina en "Action"..
-		if (FALSE == preg_match('/\w\w*Action$/', $action))
-			$method = $action."Action";
+		if (FALSE == preg_match('/\w\w*Action$/', $action)){
+				$method = $action."Action";
+				$array_params_request = [$request , $params];	
+
+		}
 		// le añadimos "Action" al final
 		try{
-			if ( method_exists($this, $method) )			
-					return call_user_func_array([$this,$method], $params);
-				// TODO:
+			
+			if ( method_exists($this, $method) ){				
+			//var_dump($method, $params , $request);
+			return call_user_func_array( [$this,$method], $array_params_request);
+				// DONE:
 				// es: Piensa e implementa una solución para que el parámetro $request no se pierda
-				// en: Plan a solution in order to use the $request parameter, which is missed currently
-			else
-				$error = PageNotFoundError::getInstance();
-				$error->setDetails(new \Exception("Action $action was not found"));
-				throw $error;
-				
+			}	// en: Plan a solution in order to use the $request parameter, which is missed currently
+			else {
+						$error = PageNotFoundError::getInstance();
+						$error->setDetails(new \Exception("Action $action was not found"));
+					}
+			throw $error;	
 		}
 		catch (\Throwable $error){
 			return $this->showError($request, $error, $action, $params);
@@ -59,17 +64,17 @@ abstract class AbstractController{
 	 * Muestra un error
 	 */
 	protected function showError($request, \Throwable $error =null, string $action ='index', array $params=[])
-	{
-		if ($this->errorController instanceof IndexControllerInterface){
-			$params = array('action'=>$action,'error'=>$error, 'params'=>$params);
-			$this->errorController->indexAction($request,$params);
-			//$this->errorController->callAction($request,'index',$params);
-		}
-		else{
-			if (!($error instanceof \Throwable))
-				$error = new \Exception('Uknown Exception',500);
-			
-			throw $error;
+	 {
+	 	if ($this->errorController instanceof IndexControllerInterface){
+	 	 		$params = array('action'=>$action,'error'=>$error, 'params'=>$params);
+	 	 		$this->errorController->indexAction($request,$params);
+	 			//$this->errorController->callAction($request,'index',$params);
+	 	}
+	 	else{
+	 	 		if (!($error instanceof \Throwable)){
+	 			$error = new \Exception('Uknown Exception',500);
+	 		}
+	 		throw $error;
 		}
 	}
 }
