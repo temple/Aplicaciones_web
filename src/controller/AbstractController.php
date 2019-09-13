@@ -35,16 +35,18 @@ abstract class AbstractController{
 	{
 		$method = $action;
 		//  Si la acción solicitada no termina en "Action"..
-		if (FALSE == preg_match('/\w\w*Action$/', $action))
+		if (FALSE == preg_match('/\w\w*Action$/', $action)){
 			$method = $action."Action";
+			$array_params_request = [$request , $params];	
+		}
 		// le añadimos "Action" al final
 		try{
-			if ( method_exists($this, $method) )			
-					return call_user_func_array([$this,$method], $params);
+			if ( method_exists($this, $method) ){			
+					return call_user_func_array([$this,$method], $array_params_request);
 				// TODO:
 				// es: Piensa e implementa una solución para que el parámetro $request no se pierda
 				// en: Plan a solution in order to use the $request parameter, which is missed currently
-			else
+			}else{
 				$error = PageNotFoundError::getInstance();
 				$error->setDetails(new \Exception("Action $action was not found"));
 				throw $error;
