@@ -201,7 +201,7 @@ div.text-body {
 	padding: 20px;
 	width: 300px;
 	text-align: center;
-	border: 2px solid #ff5f5f91;
+	border: 2px solid hsl(169, 46%, 50%);
 	border-radius: 10px;
 }
 .element{

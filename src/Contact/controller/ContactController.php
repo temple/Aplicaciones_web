@@ -15,13 +15,13 @@ class ContactController
 		
 		
 				if (empty($params['email'])){
-					$mensage = "Error en el email";
+					$mensage = "Falta el email";
 				} 
 				elseif (empty($params['nombre'])){
-					$mensage = "Error en el nombre";
+					$mensage = "Falta el nombre";
 				}
 				elseif (empty($params['mens'])) {
-					$mensage = "Error en el mensajr";
+					$mensage = "Falta el mensaje";
 				}
 				else {
 					$mensage =  "Todo correcto"; 

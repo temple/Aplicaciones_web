@@ -50,11 +50,10 @@
     </header>
   </head>
 <body>
-  <h2>Contacta con nosotros</h2>
 
   	
 		<form class = "form" method="post" id="ajaxform">
-			<h3>Ajax form</h3>
+			<h2>Contacta con nosotros</h2>
 			<input class= "element" type="text" id="nombre" name="nombre" placeholder="Nombre">
 			<input  class= "element" type="email" id="email" name="email" placeholder="Email">
 			<input class= "element" type="text" id="mens" name="mens" placeholder="Mensaje">
