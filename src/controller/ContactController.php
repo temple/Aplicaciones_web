@@ -13,7 +13,7 @@ class ContactController
 	//      la acción se llamará processContactAjaxAction
 	public function processContactAjaxAction (){
 
-		sleep(2); //simula un retardo (3sec) para ver el funcionamiento de beforeSend de ajax
+		/*sleep(2); //simula un retardo (3sec) para ver el funcionamiento de beforeSend de ajax
 		//recibo por POST el email del form
 			$email = $_POST['email'];
 
@@ -22,7 +22,7 @@ class ContactController
 		}else{
 		echo json_encode("Email recibido KO");
 		}
-		//echo json_encode("hola");
+		//echo json_encode("hola");*/
 
 	}
 
