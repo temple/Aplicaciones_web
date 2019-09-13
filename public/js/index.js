@@ -39,13 +39,14 @@ $(document).ready(function(){
 				//------------------------------------------------------
 				//acciones de envío y respuesta
 				success: function(dataSuccess){
-					$("#data").html(dataSuccess);
+					$("#data").html(dataSuccess); //Si todo está bien, se envian los datos a ajax/contact
 				},
 				beforeSend: function(){
 					$("#data").html('<i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i>');
+					//Antes de enviar una respuesta se muestra un icono
 				},
 				error: function(){
-					$("#data").html("error");
+					$("#data").html("error");//Si hay un error, muestra el mensaje "error"
 				}
 
 			});
