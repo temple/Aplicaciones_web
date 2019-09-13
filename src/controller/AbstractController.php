@@ -37,15 +37,17 @@ abstract class AbstractController{
 		//  Si la acción solicitada no termina en "Action"..
 		if (FALSE == preg_match('/\w\w*Action$/', $action)){
 			$method = $action."Action";
-			// $params_array = [$request , $params]; 
+			$params_array = [$request , $params]; 
 			// se guarden params y request en una variable
 		}
 		// le añadimos "Action" al final
 		try{
-			if ( method_exists($this, $method) ){$params_array = [$request , $params]; 
-				$params_array = [$request , $params]; 			
-					return call_user_func_array([$this,$method], $params_array);
-				}
+			if ( method_exists($this, $method) )
+			{
+				$params_array = [$request , $params]; 
+						
+				return call_user_func_array([$this,$method], $params_array);
+			}
 				// DONE:
 				// es: Piensa e implementa una solución para que el parámetro $request no se pierda 
 				// en: Plan a solution in order to use the $request parameter, which is missed currently
@@ -65,7 +67,8 @@ abstract class AbstractController{
 	 */
 	protected function showError($request, \Throwable $error =null, string $action ='index', array $params=[])
 	{
-		if ($this->errorController instanceof IndexControllerInterface){
+		if ($this->errorController instanceof IndexControllerInterface)
+		{
 			$params = array('action'=>$action,'error'=>$error, 'params'=>$params);
 			$this->errorController->indexAction($request,$params);
 			//$this->errorController->callAction($request,'index',$params);

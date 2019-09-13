@@ -9,9 +9,11 @@ header {
 }
 
 body {
-    color: white;
-    background-color: black;
+    
+   
 }
+
+
 
 h1,
 h2,
@@ -29,6 +31,7 @@ p {
 .formulario {
     padding: 0em 3.75em;
     display: flex;
+
 }
 
 .formulario iframe {
@@ -76,7 +79,7 @@ textarea {
 }
 
 .btn {
-    background-color: #f6483b;
+    /*background-color: #f6483b;*/
     color: white;
     padding: 0.938em 1.25em;
     border: none;
@@ -93,7 +96,7 @@ textarea {
 
 
 /*--------------- DISEÑO DE TABLET ---------------*/
-@media(min-width: 30em) {
+/*@media(min-width: 30em) {
     small {
         position: relative;
         top: 3.75em;
@@ -106,16 +109,16 @@ textarea {
 
     .input-field {
         max-width: 33.125em;
-    }
+    }*/
 
     /*--------------- DISEÑO DE LAPTOP ---------------*/
-    @media(min-width: 48em) {
+   /* @media(min-width: 48em) {
+*/
 
-
-        footer {
+        /*footer {
             position: absolute;
             bottom: 0;
             left: 0;
             width: 100%;
         }
-    }
+    }*/
