@@ -5,12 +5,7 @@ $email = $_POST['email'];
 
 if(!empty($email)){ //si la variable NO está vacía
 	echo json_encode("Email recibido OK");
-}
-else{
+}else{
 	echo json_encode("Email recibido OK");
 }
-
-
-
-
 
