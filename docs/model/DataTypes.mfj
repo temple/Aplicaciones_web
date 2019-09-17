@@ -1,0 +1,58 @@
+{
+	"_type": "UMLSubsystem",
+	"_id": "AAAAAAFtP/MStuSTNf0=",
+	"_parent": {
+		"$ref": "AAAAAAFF+h6SjaM2Hec="
+	},
+	"name": "PHP Data Types",
+	"ownedElements": [
+		{
+			"_type": "UMLDataType",
+			"_id": "AAAAAAFtP+/taeOVTCE=",
+			"_parent": {
+				"$ref": "AAAAAAFtP/MStuSTNf0="
+			},
+			"name": "DateTime"
+		},
+		{
+			"_type": "UMLPrimitiveType",
+			"_id": "AAAAAAFtP/RouOSdtzc=",
+			"_parent": {
+				"$ref": "AAAAAAFtP/MStuSTNf0="
+			},
+			"name": "Integer"
+		},
+		{
+			"_type": "UMLPrimitiveType",
+			"_id": "AAAAAAFtP/SleeSkCWw=",
+			"_parent": {
+				"$ref": "AAAAAAFtP/MStuSTNf0="
+			},
+			"name": "Boolean"
+		},
+		{
+			"_type": "UMLPrimitiveType",
+			"_id": "AAAAAAFtP/TMEOSoGlQ=",
+			"_parent": {
+				"$ref": "AAAAAAFtP/MStuSTNf0="
+			},
+			"name": "Float"
+		},
+		{
+			"_type": "UMLPrimitiveType",
+			"_id": "AAAAAAFtP/T7FuSshJw=",
+			"_parent": {
+				"$ref": "AAAAAAFtP/MStuSTNf0="
+			},
+			"name": "String"
+		},
+		{
+			"_type": "UMLDataType",
+			"_id": "AAAAAAFtP/VBiOS4rkE=",
+			"_parent": {
+				"$ref": "AAAAAAFtP/MStuSTNf0="
+			},
+			"name": "Array"
+		}
+	]
+}
