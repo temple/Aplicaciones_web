@@ -1,6 +1,6 @@
 <?php
 // include "config.php";
-use controller\HomeController;
+use home\controller\HomeController;
 use controller\AbstractController as IdxController;
 
 class Routing

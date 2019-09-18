@@ -1,12 +1,14 @@
 {
 	"contact":{
-		"controller":"ContactController",
-		"action" : "index"
+		"controller" : "ContactController",		
+		"module": "Contact",
+		"action": "index"
 	},
 
 	"ajax/contact" : {
 		"controller":"ContactController",
-		"action" : "processContactAjax"
+		"module": "Contact",		
+		"action": "processContactAjax"
 	},
 
 

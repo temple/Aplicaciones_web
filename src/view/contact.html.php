@@ -1,44 +1,35 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<meta charset="utf-8">
-    <title>formulario</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
-    <link rel="stylesheet" href="css/form.css">
-    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-        <script type="text/javascript" src="js/form.js"></script>
+    <head>
+        <title>Contacto</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/form.css">
+        <!-- Framework Jquery-->
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
         <script src="https://use.fontawesome.com/eaf3553229.js"></script>
-</head>
+    </head>
+    <body>
+        
+            <div class="formulario">
+        <form id="ajaxform" action="" method="get">
+            <h2>Comentarios</h2><br>
+        <div class="input-container">
+            <i class="fa fa-user icon"></i>
+            <input class="input-field" type="text" placeholder="Nombre" name="nombre" id="nombre">
+        </div>
+        <div class="input-container">
+            <i class="fa fa-envelope icon"></i>
+            <input class="input-field" type="text" placeholder="Email" name="email" id="email">
+        </div>    
+        <div class="text-container">
+            <textarea id="comentario" name="mensaje" placeholder="Comentario" rows="10"></textarea>      
+        </div>
+        <input type="button"class="btn" id="btn" value="Enviar ">
+        <div id="data"></div><!-- Caja de mensajes de validación y respuesta del serv -->
+        </form>
 
-<body>
-    <header>
-        <h1>formulario</h1>
-    </header>
-    <main>
-        
-        
-       
-            <form id="ajaxform" >
-                
-                <section class="input-container">
-                    <i class="fa fa-user icon"></i>
-                    <input id="nombre" class="input-field" type="text" placeholder="Nombre" name="nombre" >
-                </section>
-                <section class="input-container">
-                    <i class="fa fa-envelope icon"></i>
-                    <input id="email" class="input-field" type="email" placeholder="Email" name="email" >
-                </section>
-                <section class="text-container">
-                    <textarea id="comentario" name="comentario" placeholder="Comentario" rows="10"></textarea>
-                </section><br>
-                <input type="button" id="btn" value="envio de formuario">  <!-- no se pone submit sino no se validaran datos por ajax -->
-                
-            </form>
-            <section id="data"></section>
-        
-    </main>
-</body>
 
+           
+    </body>
 </html>
