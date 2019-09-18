@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
     <title>formulario</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <<!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
+    <!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> -->
     <link rel="stylesheet" href="css/form.css">
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
         <script type="text/javascript" src="js/form.js"></script>
@@ -19,7 +19,7 @@
     <main>
         
         
-        <section class="formulario">
+       
             <form id="ajaxform" >
                 
                 <section class="input-container">
@@ -33,11 +33,11 @@
                 <section class="text-container">
                     <textarea id="comentario" name="comentario" placeholder="Comentario" rows="10"></textarea>
                 </section><br>
-                <button type="button"id="btn" class="btn"  value="envio form">Enviar
-                </button>
+                <input type="button" id="btn" value="envio de formuario">  <!-- no se pone submit sino no se validaran datos por ajax -->
+                
             </form>
             <section id="data"></section>
-        </section>
+        
     </main>
 </body>
 

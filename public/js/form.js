@@ -1,32 +1,32 @@
 $(document).ready(function(){ 
 
 	//funcion que valida email mediante regexp
-	function validateEmail(email){
-		var pattern = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-		return pattern.test(email);
-	}
+	// function validateEmail(email){
+	// 	var pattern = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	// 	return pattern.test(email);
+	// }
 
 	//Selector del boton con Id=btn y evento click
-	$("#btn").click(function() {
+	// $("#btn").click(function() {
 
-		//Sólo se valida el campo EMAIL (si es vacío y cumple el formato de regExp)
-		var email_msg = "";
+	// 	//Sólo se valida el campo EMAIL (si es vacío y cumple el formato de regExp)
+	// 	var email_msg = "";
 
-		var test = validateEmail($("#email").val());
+	// 	var test = validateEmail($("#email").val());
 
-		if($("#email").val() == "") { //val(): value del input
-			$("#email").addClass("border_error"); //añade clase css ya definida en el doc. "index.css"
-			email_msg = "El campo Email está vacío";
-			$("#data").html(email_msg); //html() inyecta código HTML en el elemento seleccionado
-		}else if(!validateEmail($('#email').val())){
-			$("#email").addClass("border_error"); //añade clase css ya definida en el doc. "index.css"
-			email_msg = "El campo Email no es correcto";
-			$("#data").html(email_msg); //html() inyecta código HTML en el elemento seleccionado
-		}else{
-			$("#email").removeClass("border_error"); //elimina clase css ya definida en el doc. "index.css"
-		}
+	// 	if($("#email").val() == "") { //val(): value del input
+	// 		$("#email").addClass("border_error"); //añade clase css ya definida en el doc. "index.css"
+	// 		email_msg = "El campo Email está vacío";
+	// 		$("#data").html(email_msg); //html() inyecta código HTML en el elemento seleccionado
+	// 	}else if(!validateEmail($('#email').val())){
+	// 		$("#email").addClass("border_error"); //añade clase css ya definida en el doc. "index.css"
+	// 		email_msg = "El campo Email no es correcto";
+	// 		$("#data").html(email_msg); //html() inyecta código HTML en el elemento seleccionado
+	// 	}else{
+	// 		$("#email").removeClass("border_error"); //elimina clase css ya definida en el doc. "index.css"
+	// 	}
 		
-		if(email_msg == ""){
+		// if(email_msg == ""){
 
 			$.ajax({
 
