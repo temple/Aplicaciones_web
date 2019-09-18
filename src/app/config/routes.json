@@ -1,21 +1,28 @@
 {
 	"contact":{
-		"" : "ContactController"
+		"controller": "ContactController",
+		"module": "Contact",
+		"action": "index"
 	},
 
 	"ajax/contact" : {
-		"controller":,
-		"" : "processContactAjax"
+		"controller":"ContactController",
+		"module": "Contact",
+		"action": "processContactAjax"
 	},
 
 	"home": {
 		"controller" : "HomeController",
+		"module": "Home",
 		"action": "index"
+		
 	},
 
 	"home/premium": {
 		"controller": "HomeController",
+		"module": "Home",
 		"action": "premium"
+		
 	},
 
 	"login" : {
@@ -29,11 +36,14 @@
 	},
 
 	"404" : {
-		"controller": "ErrorController"
+		"controller": "ErrorController",
+		"module": "Error"
 	},
 
 	"error": {
 		"controller": "ErrorController",
+		"module": "Error",
 		"action": "indexAction"
+		
 	}
 }
