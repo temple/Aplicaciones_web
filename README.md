@@ -220,12 +220,146 @@ Finalmente, y en relación a las extensiones de _PHP_, éstas funcionarán corre
 - [libyaml](https://www.php.net/manual/es/yaml.requirements.php) : para la extensión yaml
 
 ## INSTALACIÓN
+Para instalar la aplicación es necesario disponer del software _git_, del software _composer_, del software cliente de consola de comandos _mysql_ y de connexión a internet.  
+
+La instalación de la aplicación consiste en dos pasos:
+
+- **El despliegue de la aplicación**
+- **El despliegue de los datos**
+
 ### Despliegue
+El despliegue de una aplicación web pasa por dos estadios, en los cuales se descargará una réplica de la aplicación en el directorio `/var/www`.  
+En caso de no disponer de este directorio, deberá tomarse un directorio análogo que pueda ser accedido tanto por el servicio web como por el servicio de aplicaciones.  
+
+Durante la posterior fase de configuración del entorno, a este directorio le llamaremos `HOSTS_ROOT`.  Por otro lado, al directorio con que se genere la aplicación (`/var/www/aplicaciones.web`) le llamaremos `APP_ROOT`, y al directorio de la aplicación que deberá ser servido por el servicio web (`/var/www/aplicaciones.web/public`) le llamaremos `DOCUMENT_ROOT`.
+
 #### Aplicación
+La descarga de la réplica de la aplicación se realiza mediante el software _git_ utilizando su [instrucción de clonado `clone`](https://git-scm.com/book/es/v1/Fundamentos-de-Git-Obteniendo-un-repositorio-Git).  Es justamente en esta operación cuando se hace imprescindible disponer de conexión a internet.  
+Tras la descarga de la aplicación deberá crearse un archivo `autoload.php` que permitirá la carga de clases en la aplicación. Para ello se utilizará la [instrucción de volcado de clases `dump-autoload`][dump-autoload] del software _composer_ .
+
+[dump-autoload]: https://getcomposer.org/doc/03-cli.md#dump-autoload-dumpautoload-
+
+```bash
+#!/bin/bash
+cd HOSTS_ROOT
+git clone https://github.com/temple/Aplicaciones_web.git aplicaciones.web
+cd APP_ROOT
+composer dump-autoload
+```
+
+Para realizar las anteriores operaciones será necesario utilizar una sesión de usuario del sistema operativo que disponga de permisos para acceder y escribir dentro del directorio `HOSTS_ROOT`.  
+Naturalmente dicho usuario debe tener permiso de ejecución de los software _git_ y _composer_.  
+
+> **Nota: Una vez desplegada la réplica de la aplicación deberemos comprobar la existencia del directorio `APP_ROOT`. Este directorio y su contenido, también deberá poder ser accedidos en modo lectura por el servicio de aplicaciones. En cuanto al directorio `DOCUMENT_ROOT`, deberá ser accesible en modo lectura por el servicio web.** 
+
 #### Datos
+El despliegue de los datos se realiza utilizando el software `mysql` antes mencionado.  
+Mediante este software se realizará una carga en el servicio de bases datos, de los datos contenidos en el archivo `app.init.sql` que encontraremos en la carpeta `data` que habrá dentro del directorio `APP_ROOT`.  
+  
+Esta operación requerirá que el servicio de base de datos esté en funcionamiento, y _escuche_ un puerto _TCP_ en una dirección _IP_ que sea accesible por parte del sistema operativo en el que hemos realizado el despliegue de la aplicación .  
+
+> **Nota: En caso de tratarse de un servicio MySQL en un sistema linux basado en [_systemd_](https://freedesktop.org/wiki/Software/systemd/) como _Ubuntu_, _Debian_, _Fedora_, _CentOS_ o _Red Hat Enterprise Linux_, pueden ejecutarse, usando un usuario con permisos de administración de servicios, las instrucciones `systemctl start mysqld` o `systemctl start mariadb` para poner en marcha dicho servicio en el sistema en el que esté instalado, según se trate de MySQL o de MariaDB respectivamente.** 
+  
+Para la realización del despliegue de los datos será necesario disponer de las credenciales de un usuario del servicio de bases de datos que tenga permiso para crear una base de datos.  
+En nuestro caso partimos de la base de que se dispone del usuario `root` y que este puede crear bases de datos en el servicio. También partimos de la base de que el servicio de base de datos está accesible a través del protocolo _TCP_ en el puerto `3306` de la dirección _IP_ `127.0.0.1` (conocida como _localhost_) a los que llamaremos respectivamente `DB_PORT` y `DB_HOST`.
+
+Para el despliegue inicial de datos deberemos ejecutar las siguientes instrucciones:
+
+```bash
+#!/bin/bash
+cd APP_ROOT
+mysql -u root -p -P DB_PORT -h DB_HOST < data/app.init.sql
+```      
+
 ### Configuración
+La configuración necesaria para la puesta en marcha de la aplicación afecta por un lado al servicio web, al que hay que crear un _sitio web_ (en caso de tratarse de _Internet Information Server_), un _server_ (en caso de _Nginx_) o un _virtual-host_ (en caso de _Apache_ o _Lighttpd_).    
+Los datos que deberán emplearse para la creación son:
+
+- Puerto TCP: `80` (o alternativamente el puerto que esté siendo escuchado por el servicio web)
+- Dirección IP de la interfaz de red: `*` (cualquier dirección)
+- Dominio: `aplicaciones.web`
+- Document root: `DOCUMENT_ROOT` (directorio explicado en el apartado _Despliegue_)
+- Archivo índice: `index.php` 
+
+En el caso de que se haya optado por el demonio PHP-FPM, y que se haya dejado la configuración por defecto en su instalación, deberán utilizarse adicionalmente los siguientes parámetros para la configuración del virtual-host, sitio web o server:
+
+- Extensión/Expresión de archivo: `.php` / `^.*\.php(/.*)?` 
+- ProxyPass para Fast-CGI: `127.0.0.1:9000` (valores por defecto para el servicio PHP-FPM)
+
 #### Virtual hosts y dominios
+Un ejemplo de archivo de configuración para el servidor _Apache_ sería:
+
+```conf
+LoadModule proxy_module modules/mod_proxy.so
+
+LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so
+
+<VirtualHost *:80>
+	ServerName aplicaciones.web
+	DocumentRoot DOCUMENT_ROOT
+	<Directory DOCUMENT_ROOT>
+		DirectoryIndex /index.php index.php
+        RewriteEngine On
+        RewriteBase /
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteRule ^ index.php [QSA,L]
+	</Directory>
+    ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9000%{DOCUMENT_ROOT}/$1
+</VirtualHost>
+```
+> **Nota: en el anterior ejemplo, debe reemplazarse `DOCUMENT_ROOT` por la ruta real hacia dicho directorio.**  
+> En el anterior ejemplo nos encontraríamos con:
+> ```
+> DocumentRoot /var/www/aplicaciones.web/public
+> ...
+> <Directory /var/www/aplicaciones.web/public >
+> ...
+> ```
+
+En el caso de que se usara un servidor _Nginx_ optaríamos por algo como:
+
+```conf
+server {
+  listen *:80;
+  server_name aplicaciones.web;
+  root DOCUMENT_ROOT;
+  index index.php;
+  location / {
+  	try_files $uri /index.php$is_args$args;
+  }
+  location ~ [^/]\.php(/|$){
+  	include fastcgi_params;
+    fastcgi_param  SCRIPT_FILENAME   $document_root$fastcgi_script_name;
+	fastcgi_pass 127.0.0.1:9000;
+	fastcgi_index index.php;
+	internal;
+  }
+}
+```
+
+> **Nota: en el anterior ejemplo, debe reemplazarse `DOCUMENT_ROOT`, por la ruta real hacia dicho directorio.**  
+> En el anterior ejemplo nos encontraríamos con:
+> ```
+> root /var/www/aplicaciones.web/public
+> ```
+
 #### Acceso a datos
+Para lograr que la aplicación puede acceder a los datos, una vez estos han sido desplegados, deberemos editar el archivo `app.yml` que se encuentra en la carpeta `config` dentro de la carpeta `app`, que hay dentro de la carpeta `src` que se encuentra en el directorio APP_ROOT; en otras palabras, habrá que editar el archivo `APP_ROOT/src/app/config/app.yml`.
+
+Dentro de ese archivo, deberán reemplazarse los valores `DB_HOST` y `DB_PORT` por los valores reales correspondientes dentro del bloque `db`.
+
+```
+# src/app/config/app.yml
+
+db:
+  host: DB_HOST
+  port: DB_PORT
+  user: app
+  pass: secret
+  scheme: aplicaciones_web
+
+```
 
 ## VERIFICACIÓN
 ### Requerimientos
