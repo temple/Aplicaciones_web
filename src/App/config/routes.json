@@ -1,0 +1,17 @@
+{
+	"" : {
+		"controller" : "MainController",
+		"action"	: "index",
+		"module" : "Contenidos"		
+	},
+	"home" : {
+		"controller" : "MainController",
+		"action"	: "index",
+		"module" : "Contenidos"		
+	},
+	"ajax" : {
+		"controller" : "MainController",
+		"action"  : "ajax",
+		"module" : "Contenidos"
+	}
+}
